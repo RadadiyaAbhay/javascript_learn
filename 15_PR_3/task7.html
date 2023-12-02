@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic number</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body>
+
+
+
+<!-- Magic number -->
+
+
+<!-- input 
+     1729-->
+
+
+
+<!-- process 
+    1+7+2+9=
+    19=
+    91*19=
+    -->
+
+
+<!-- Output  
+     Ans = 1729-->
+
+
+    <h3 class="fw-bolder p-3 bg-dark text-center text-white">Magic number list of a given number</h3>
+    <input type="text" id="userInput" placeholder="Enter Number" class="ms-3"/>
+    <input type="button" value="Submit" onclick="return tab()"/>
+    <p id="table" class="ms-3 mt-2"></p>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script>
+    function tab(){
+        document.getElementById('table').innerHTML = ` `;
+        var a =parseInt(document.getElementById('userInput').value);
+        var i = 1;
+        var xz= '';
+
+
+        while(i<=a){
+            var k = i.toString();
+        var len = k.length;
+        var m =0;
+        var ne =0;
+        while(len>0){
+            len--;
+            // console.log(ne);
+           
+            ne = (ne  - k[len]);
+            m= (-ne);
+            
+        }
+        // console.log(m);
+        if(i>9){
+            var r =m.toString();
+            len2=r.length;
+            var z = '';
+            var x =1;
+            // console.log(len2);
+
+            while(len2>0){
+            len2--;
+            // console.log(r[len2]);
+            z += r[len2];
+            // console.log(z);
+            
+        }
+        x= (m*z);
+            // console.log(x);
+        if(x==i){
+        xz +=`${x} <br/>`;
+        }
+
+
+        }else{
+        xz+=``;
+
+            }
+            i++;
+        }
+        document.getElementById('table').innerHTML +=xz;
+        
+    }
+    </script>
+</body>
+</html>

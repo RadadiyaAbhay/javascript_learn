@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+</head>
+<body>
+    <p id="ans"></p>
+    <script>
+        let numbers = [-23,-20,-17, -12, -5, 0, 1, 5, 12, 19, 20];
+
+        var ans = numbers.filter((num) =>{
+                return num >= 0;
+            })
+
+        document.getElementById('ans').innerHTML =`Positive Value = ${ans}`;
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7</title>
+</head>
+<body>
+    
+    <script>
+
+    var gameArray = ['fortnite', 'minecraft', 'apex legends', 'call of duty'];
+
+    Array.prototype.myUpCase = function() {
+      for (let i = 0; i < this.length; i++) {
+        this[i] = this[i].toUpperCase();
+      }
+    };
+    
+    gameArray.myUpCase();
+    console.log(gameArray);
+   
+    </script>
+</body>
+</html>

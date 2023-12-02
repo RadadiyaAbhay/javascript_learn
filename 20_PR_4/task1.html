@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Message</title>
+</head>
+<body>
+    <label> Enter Your Name = </label>
+    <input type="text" id="in"/>
+    <input type="button" value="Submit" onclick="return greeting(document.getElementById('in').value)" style="display: block; margin-top: 10px;"/>
+    <p id="out"></p>
+    <script>
+        function greeting(name){
+            console.log(name);
+            if(name == ''){
+                document.getElementById('out').innerHTML =`Good Morning`;
+            }else{
+                document.getElementById('out').innerHTML =`Welcome ${name} Our Website`;
+
+            }
+        }
+        // greeting('Abhay');
+    </script>
+</body>
+</html>

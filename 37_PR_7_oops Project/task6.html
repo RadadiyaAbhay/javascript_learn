@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+</head>
+<body>
+
+    <script>
+        function emp(name , email ,salary){
+            this.name =name;
+            this.email =email;
+            this.salary =salary;
+        }
+
+        emp.prototype.designation = 'HR';
+
+        var e1 = new emp('Ram' ,'ram@gamil.com',30000);
+        console.log(`Emp Name = ${e1.name} , Email = ${e1.email} , Salary = ${e1.salary} , designation = ${e1.designation}` );
+        
+    </script>
+</body>
+</html>

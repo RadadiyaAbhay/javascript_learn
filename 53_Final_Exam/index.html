@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country's Name , Flag And Languages</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+    <header class="bg-dark">
+        <div class="container">
+            <div class="row">
+                <h4 class="py-3 m-0 text-white text-center">
+                    Country's Name , Flag And Languages 
+                </h4>
+            </div>
+        </div>
+    </header>
+
+    <main style="background-image: url('https://img.freepik.com/free-vector/world-map-isolated_98292-4295.jpg?w=2000');background-attachment: fixed; background-position: center; ">
+        <section class="py-5">
+            <div class="container">
+                <div class="row" id="show">
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script>
+        var url ='https://restcountries.com/v3.1/all';
+
+        var show =document.getElementById('show');
+
+
+        fetch(url).then((res)=>{
+            return res.json();
+        }).then((resn) =>{
+            console.log(resn);
+            for (const key in resn) {
+            
+                var prin = '';
+                var lan = resn[key].languages;
+                for (const key2 in lan) {
+                    if(prin != ''){
+                        prin += ` , `
+                    }
+                    prin += `<span class="p-0">${lan[key2]}</span>`
+                }
+            
+            show.innerHTML += ` 
+            <div class="col-12 col-lg-6 d-lg-flex my-2 rounded-5">
+                <div class="col-12 col-lg-6  border border-5 d-flex justify-content-center align-items-center p-2 bg-black">
+                    <img src="${resn[key].flags.png}" class="img-fluid" style="height:200px;" alt="">
+                </div>
+                <div class="col-12 col-lg-6 border border-1 p-3" style="backdrop-filter: blur(10px);">
+                    <h4 class="fw-bolder">
+                        ${resn[key].name.common}
+                    </h4>
+                    <p>
+                    <b class="fs-5">Languages : </b> ${prin} .
+                    </p>
+                </div>
+            </div>
+            `
+        }
+        }).catch((err) =>{
+            console.log((err));
+        })
+    </script>
+</body>
+</html>

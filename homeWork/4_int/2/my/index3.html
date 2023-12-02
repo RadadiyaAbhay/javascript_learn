@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        .cb{
+            background-color: rgba(220 , 53 ,69 ,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-dark text-white p-2">
+        <div class="container">
+            <div class="row">
+                <div class="logo">
+                    <h3 class="fw-bolder text-center">Interest Calculator</h3>
+                </div>
+            </div>
+        </div>
+        
+    </header>
+    <section id="im" class="w-100 " style="height: 100%;">
+        <div class="container" >
+            <div class="row" >
+                <div class="d-flex justify-content-center align-items-center "  style="height: 600px;">
+
+                    <div class="border p-5 bg-white" style="height: 550px; width: 700px;box-shadow: 1px 2px 10px #000000;">
+                        <h5 class="fw-bold text-primary-emphasis" >Principal Amount :</h5>
+                        <input type="range" class="col-6" min="1" value="1"  max="10000000" id="pai" oninput="iti(this.value)"/>
+                        <p type="text" class="d-inline col-6 border rounded-5 px-4 ms-3 py-1" style="box-shadow: 1px 1px 5px #000000;" >₹ <input type="number" id="pao" class="border-0" min="1" value="1"  max="10000000" oninput="iti2(this.value)"></p>
+                        <div class="d-flex justify-content-between col-6">
+                            <p style="font-size: 13px;" class="pb-0 ">1</p>
+                            <p style="font-size: 13px;" class="mb-0 ">10Cr</p>
+                        </div>
+
+                        <h5 class="fw-bold text-primary-emphasis" >Tenure (months): </h5>
+                        <input type="range" class="col-6" min="12"  max="360" value="240" onchange="return iti()" id="yi"/>
+                        <p type="text" class="d-inline col-6 border rounded-5 px-4 ms-3 py-1" style="box-shadow: 1px 1px 5px #000000;" ><span id="yo">240</span></p>
+                        <div class="d-flex justify-content-between col-6">
+                            <p style="font-size: 13px;" class="pb-0 ">12</p>
+                            <p style="font-size: 13px;" class="mb-0 ">360</p>
+                        </div>
+
+                        <h5 class="fw-bold text-primary-emphasis" >Rate of Interest :</h5>
+                        <input type="range" class="col-6" min="5"  max="18" value="12" onchange="return iti()" id="ri"/>
+                        <p type="text" class="d-inline col-6 border rounded-5 px-4 ms-3 py-1" style="box-shadow: 1px 1px 5px #000000;" ><span id="rate">12</span> %</p>
+                        <div class="d-flex justify-content-between col-6">
+                            <p style="font-size: 13px;" class="pb-0 ">5%</p>
+                            <p style="font-size: 13px;" class="mb-0 "> 18%</p>
+                        </div>
+
+                        
+                        
+                        
+
+
+                        <div class="col-12 border d-flex pt-5 ps-4 mt-5 pb-2 cb" style="border-top-right-radius:50px ;box-shadow: 1px 1px 5px #000000;">
+                            <div class="col-3 ">
+                                <h6 class="mb-0 fw-bolder text-primary-emphasis">Monthly EMI </h6>
+                                <p class="fs-5 fw-bold">₹ <span id="emi1">8792</span></p>
+                            </div>
+                            <div class="col-3">
+                                <h6 class="mb-0">Principal Amount </h6>
+                                <p class="fs-5 fw-bold">₹ <span id="pao2">1</span></p>
+                            </div>
+                            <div class="col-3">
+                                <h6 class="mb-0">Interest Amount </h6>
+                                <p class="fs-5 fw-bold">₹ <span id="inte">1650000</span></p>
+                            </div>
+                            <div class="col-3">
+                                <h6 class="mb-0">Total Amount </h6>
+                                <p class="fs-5 fw-bold">₹ <span id="final">2150000</span></p>
+                            </div>
+                            
+                        </div>
+
+                        
+                        
+                        
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-5">
+        <div class="container" id="show">
+            
+        </div>
+        
+
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="script3.js"></script>
+</body>
+</html>

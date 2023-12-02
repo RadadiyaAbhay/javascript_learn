@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Form Validation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+
+     
+    <form class="row g-3" onsubmit="return event.preventDefault(), formVaildation(document.getElementById('inputName').value,document.getElementById('inputEmail').value,document.getElementById('inputPassword').value,document.getElementById('inputcPassword').value)">
+        <div class="col-md-6">
+            <label for="inputEmail" class="form-label">Name</label>
+            <input type="text" class="form-control"  id="inputName">
+            <p class="p-0" id="name"></p>
+          </div>
+        <div class="col-md-6">
+          <label for="inputEmail" class="form-label">Email</label>
+          <input type="email" class="form-control" id="inputEmail">
+          <p class="p-0" id="email"></p>
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword" class="form-label">Password</label>
+          <input type="password" class="form-control" id="inputPassword">
+          <p class="p-0" id="password"></p>
+        </div>
+        <div class="col-md-6">
+            <label for="inputcPassword" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="inputcPassword">
+            <p class="p-0" id="confirm_password"></p>
+          </div>
+        
+        <div class="col-12">
+            <p class="p-0" id="passCheak"></p>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

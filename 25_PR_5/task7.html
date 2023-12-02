@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7</title>
+</head>
+<body>
+    <p id="arr"></p>
+    <p id="arr2"></p>
+    <p id="ans1"></p>
+    <p id="ans2"></p>
+    <p id="ans3"></p>
+    <p id="ans4"></p>
+
+    <script>
+        let numbers = [23,20,17, 12,5, 0, 1, 5, 12, 19, 20];
+        let myColor = ["Red", "Green", "White", "Black"];
+
+        document.getElementById('arr').innerHTML =`Array = ${numbers}`;
+        
+        var ans = numbers.sort()
+        document.getElementById('ans1').innerHTML =`Ascending Value = ${ans}`;
+        var ans2 =numbers.reverse();
+        document.getElementById('ans2').innerHTML =`Descending Value = ${ans2}`;
+        
+        document.getElementById('arr2').innerHTML =`Array = ${myColor}`;
+        var ans3 = myColor.sort()
+            document.getElementById('ans3').innerHTML =`Ascending Value = ${ans3}`;
+        var ans4 =myColor.reverse();
+            document.getElementById('ans4').innerHTML =`Descending Value = ${ans4}`;
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Odd Or Even Number</title>
+</head>
+<body>
+    <label> Enter Number = </label>
+    <input type="number" id="in"/>
+    <input type="button" value="Submit" onclick="return findOddOrEven(parseInt(document.getElementById('in').value))" style="display: block; margin-top: 10px;"/>
+    <p id="out"></p>
+    
+    <script>
+        function findOddOrEven(num){
+            if((num%2) == 0){
+                document.getElementById('out').innerHTML = `${num} is an even Number`;
+            }else{
+                document.getElementById('out').innerHTML = `${num} is an Odd Number`;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+    <section style="background-image: url(https://www.silvana.com/app/uploads/movement-gears-background.jpg); height: 100vh;" >
+    <div class="container">
+        <div class="row">
+            <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+                <div class="bg-white text-center col-3 py-5 rounded-2" style="box-shadow: 5px 5px 50px #787777;" >
+                    <h5>Stop Watch</h5>
+                    <h1 id="timer" >0:0:0</h1>
+                    <button id="start1" class="btn btn-dark rounded-circle" value="Start" onclick="return start()"><i class="bi bi-caret-right-fill"></i></button>
+                    <button class="btn btn-dark rounded-circle" id="pause1" value="Pause" onclick="return pause()"><i class="bi bi-pause-fill"></i></button>
+                    <button class="btn btn-dark rounded-circle" id="resume1" value="Resume" onclick="return resume()"><i class="bi bi-caret-right-fill"></i></button>
+                    <button class="btn btn-dark rounded-circle" id="reset1" value="Reset" onclick="return reset()"><i class="bi bi-x"></i></button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>    
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script>
+        var start1 =document.getElementById('start1');
+        var pause1 =document.getElementById('pause1');
+        var resume1 =document.getElementById('resume1');
+        var reset1 =document.getElementById('reset1');
+        pause1.style.display ='none'
+        resume1.style.display ='none'
+        reset1.style.display ='none'
+        var hour =0;
+        var min =0;
+        var sec =1;
+        var timer = () => {
+
+            document.getElementById('timer').innerHTML = `${hour}:${min}:${sec}`;
+            sec++;
+
+            if(sec == 60){
+            sec=0;
+            min++;
+            }
+
+            if(min == 60){
+            min=0;
+            hour++;
+            }
+        };
+
+
+        var clear;
+    function start() {
+        clear = setInterval(timer, 1000);
+        pause1.style.display ='inline-block'
+        start1.style.display ='none'
+        reset1.style.display ='inline-block'
+
+    }
+
+    function pause() {
+        clearInterval(clear);
+        resume1.style.display ='inline-block'
+        reset1.style.display ='inline-block'
+        pause1.style.display ='none'
+
+    }
+    function resume() {
+        clear = setInterval(timer, 1000);
+        pause1.style.display ='inline-block'
+        resume1.style.display ='none'
+
+        
+    }
+    function reset() {
+        hour =0;
+        sec=0;
+        min =0;
+        clearInterval(clear);
+        timer();
+        pause1.style.display ='none'
+        resume1.style.display ='none'
+        reset1.style.display ='none'
+        start1.style.display ='inline-block'
+
+
+    }
+
+    </script>
+</body>
+</html>

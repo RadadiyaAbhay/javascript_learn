@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function define</title>
+</head>
+<body>
+    <script>
+        // function types
+        // 1.declaration function
+        
+        
+
+
+        function sumT(){
+            var a = 10;
+            var b = 20;
+            var c = a+b ;
+
+            console.log(c);
+        }
+
+        sumT();
+
+        // 2.expression function
+        //limitation = this function not invoke in or call in function upper side
+
+        var divT = function(){
+            var a=20;
+            var b=5;
+            var c=a/b;
+            console.log(c);
+        }
+
+        divT();
+
+        // 3.arrow function
+        //limitation = this function not invoke in or call in function upper side
+
+        var mulT = () =>{
+            var a = 20;
+            var b = 20;
+            var c = a+b;
+            console.log(c);
+        }
+
+        mulT();
+
+        //benifits =this function define in one line without any {} and ()
+
+        var modT = k => "hi " + k;
+
+        var x = modT('Abhi');
+        console.log(x);
+
+
+    </script>
+</body>
+</html>

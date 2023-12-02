@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+</head>
+<body>
+    <p id ="min"></p>
+    <p id ="max"></p>
+    <script>
+        let numbers = [63,20,23, 12,5, 5, 3, 5, 12, 19, 20];
+
+
+
+        var minValue = numbers[0];
+        var maxValue = numbers[0];
+        numbers.forEach((num) => {
+        if(minValue > num){
+            minValue = num;
+        }
+        if(maxValue < num){
+            maxValue = num;
+        }
+    })
+    document.getElementById('min').innerHTML = `Minimum Value = ${minValue}`;
+    document.getElementById('max').innerHTML = `Maximum Value = ${maxValue}`;
+    </script>
+</body>
+</html>

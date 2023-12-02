@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Interest Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body>
+    <h1 class="text-center py-3 bg-danger position-absolute col-12 pt-3 pb-5 fw-bolder" style="z-index: -1;">Simple Interest Calculator</h1>
+    <div class="container " style="padding-top: 80px;";  >
+        <div class="col-12 d-flex flex-wrap bg-white" style=" box-shadow: 1px 2px 10px 1px #000000; " >
+            <div class="col-12 text-center pt-3 pb-3 ">
+                <h3>
+                    Calculate Your Interest
+                </h3>
+            </div>
+            <div class="col-md-6 col-sm-12 col-12 ">
+                <div class="col-12 ps-5 pb-5 pt-2">
+                    <h6>
+                        Amount :
+                    </h6>
+                    <input type="text" id="pa" style="background-color: rgba(220,53,69, 0.1);"/>
+                    <h6 class="pt-4">
+                        Rate of Interest(%):
+                    </h6>
+                    <input type="text" id="roi" style="background-color: rgba(220,53,69, 0.1);"/>
+                    <h6 class="pt-4">
+                        Loan Terms (yearly):
+                    </h6>
+                    <input type="text" class="d-block " id="lt" style="background-color: rgba(220,53,69, 0.1);"/>
+                    <input type="button" value="submit" class="mt-3 btn rounded-5 btn-danger py-2 px-3" onclick="return interestcalc()" />
+                </div>
+            </div>
+            <div class="col-md-6 col-12 col-sm-12 pe-5 ms-4 ms-sm-4 ms-md-0" id="data" >
+            
+            </div>
+        </div>
+    </div>
+    
+<!-- script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+    <script>
+        function interestcalc(){
+            var result = `<div class="col-12 ps-5 pt-4 pb-3  rounded-0 " style="background-color: rgba(220,53,69, 0.1); box-shadow: 1px 2px 10px 1px #000000; ">
+                <h6 class="mb-0">
+                    Principal Amount :
+                </h6>
+                <p id="pamo" class=" pt-1 col-4 "></p>
+                <h6 class="pt-2 mb-0">
+                    Interest Amount :
+                </h6>
+                <p id="rofi" class="pt-1 col-4"></p>
+                <h6 class="pt-2 mb-0">
+                    Total Amount Payable :
+                </h6>
+                <p id="aamo" class="pt-1 col-4"></p>
+            </div>`;
+            var principalAmount = parseInt(document.getElementById("pa").value);
+            var rateOfInterest = parseInt(document.getElementById("roi").value);
+            var numberOfYears = parseInt(document.getElementById("lt").value);
+            var accruedAmount = principalAmount*( 1 + ( (rateOfInterest/100) * numberOfYears ) );
+            var interestAmount = accruedAmount - principalAmount ;
+
+            document.getElementById("data").innerHTML = result;
+            document.getElementById("pamo").innerHTML = principalAmount;
+            document.getElementById("rofi").innerHTML = interestAmount;
+            document.getElementById("aamo").innerHTML = accruedAmount;
+
+        }
+        
+
+    </script>   
+</body>
+</html>

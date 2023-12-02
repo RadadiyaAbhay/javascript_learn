@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+</head>
+<body>
+
+    <script>
+        function mobile(modelNo){
+            this.modelNo = modelNo;
+        }
+
+        mobile.prototype.color = 'red';
+
+        var m1 = new mobile('M100');
+        console.log(`Color = ${m1.color} , Model No = ${m1.modelNo}` );
+        
+    </script>
+</body>
+</html>

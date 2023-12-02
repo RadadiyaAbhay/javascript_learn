@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solve Sum 2</title>
+
+</head>
+<body>
+    <label> Enter A = </label>
+    <input type="text" id="ain" />
+    <br/>
+    <br/>
+    <label > Enter B = </label>
+    <input type="text" id="bin"/>
+    <input type="button" value="Submit" onclick="return val()" style="display: block; margin-top: 10px;"/>
+    <p id="out"></p>
+
+    <script>
+        function ansSolution(a, b){
+            var ans;
+            ans =(((a*a)+(2*a*b))+(b*b));
+            return ans;
+        }
+
+        function val(){
+            var aInput;
+            var bInput;
+            aInput = parseInt(document.getElementById('ain').value);
+            bInput = parseInt(document.getElementById('bin').value);
+            var sum = ansSolution(aInput , bInput);
+            // console.log(sum);
+            document.getElementById('out').innerHTML=`<p>Sum Ans = ${sum.toFixed(2)}</p>`;
+        }
+       
+
+    </script>
+</body>
+</html>

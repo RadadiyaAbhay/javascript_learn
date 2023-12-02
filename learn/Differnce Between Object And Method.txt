@@ -1,0 +1,12 @@
+Class : Student
+
+Object : Student 1 , Object 2
+
+Key : Name ,id ,Number
+
+
+Class = Array
+
+Object =
+
+Method = Map , Sort , Filter 

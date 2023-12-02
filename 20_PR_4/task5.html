@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solve Sum</title>
+
+</head>
+<body>
+    <label> Enter A = </label>
+    <input type="text" id="ain" />
+    <br/>
+    <br/>
+    <label > Enter B = </label>
+    <input type="text" id="bin"/>
+    <br/>
+    <br/>
+    <label > Enter C = </label>
+    <input type="text" id="cin"/>
+    <input type="button" value="Submit" onclick="return val()" style="display: block; margin-top: 10px;"/>
+    <p id="out"></p>
+
+    <script>
+        function ansSolution(a, b ,c){
+            var ans;
+            ans =(((b*b)-(4*a*c))/(2*a));
+            return ans;
+        }
+
+        function val(){
+            var aInput;
+            var bInput;
+            var cInput;
+            aInput = parseInt(document.getElementById('ain').value);
+            bInput = parseInt(document.getElementById('bin').value);
+            cInput = parseInt(document.getElementById('cin').value);
+            var area = ansSolution(aInput , bInput ,cInput);
+            // console.log(area);
+            document.getElementById('out').innerHTML=`<p>Sum Ans = ${area.toFixed(2)}</p>`;
+        }
+       
+
+    </script>
+</body>
+</html>

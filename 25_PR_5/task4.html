@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+</head>
+<body>
+    <p id="pro"></p>
+    <p id="pri"></p>
+
+    <script>
+        var myColor = ['Ahbj' , 'berfsd' , 'ldsf' ,'ddsfcx'];
+
+        var newArray = myColor.toString();
+        var pri ='';
+        
+        
+        for(i=0 ;i<newArray.length ; i++){
+            if(newArray[i] != ','){
+
+                pri +=`"${newArray[i]}" ASCII value = `;
+                
+                pri +=`${newArray.charCodeAt(i)}<br/>`;
+            }
+            
+
+        }
+        document.getElementById('pro').innerHTML =`Array = ${myColor}`;
+        document.getElementById('pri').innerHTML =pri;
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random selection</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body class="bg-dark">
+    <section>
+        <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+            <div class="row " >
+                <div class="bg-white p-5 rounded-1 text-center" style="box-shadow: 5px 5px 50px #787777;">
+                    <h6 class="pb-1">Generate Quotes</h6>
+                    <button class="btn btn-dark " onclick="return generate()">Generate</button>
+                    <p id="pos" class="pt-2"></p>
+                </div>      
+            </div>
+        </div>
+    </section>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script>
+        var array = [
+            "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
+            "So many books, so little time.",
+            "A room without books is like a body without a soul.",
+            "Be who you are and say what you feel, because those who mind don't matter, and those who matter don't mind",
+            "You know you're in love when you can't fall asleep because reality is finally better than your dreams.",
+            "You only live once, but if you do it right, once is enough.",
+            "Be the change that you wish to see in the world.",
+            "In three words I can sum up everything I've learned about life: it goes on.",
+            "If you tell the truth, you don't have to remember anything.",
+            "There is always light. If only we're brave enough to see it. If only we're brave enough to be it.",
+            "If you want to lift yourself up, lift up someone else.",
+            "I scorched the earth with my talent and I let my light shine.",
+            "You’re braver than you believe, stronger than you seem, and smarter than you think.",
+            "It took me quite a long time to develop a voice, and now that I have it, I am not going to be silent.",
+            "You can't rely on how you look to sustain you, what sustains us, what is fundamentally beautiful is compassion; for yourself and your those around you.",
+            "Attitude is the 'little' thing that makes a big difference.",
+            "We will fail when we fail to try.",
+            "All our dreams can come true — if we have the courage to pursue them.",
+            "Once you face your fear, nothing is ever as hard as you think.",
+            "I don’t go to church regular. But I pray for answers to my problems."
+        ];
+        
+        var count =0;
+        function generate(){
+            // method 1
+            // if(count <= Math.floor((Math.random()*10))){
+            //     var pos = Math.floor((Math.random()*10));
+            // }else{
+            //     count = Math.floor((Math.random()*10));  
+            //     var pos = Math.floor((Math.random()*10)+10); 
+            // }
+            // document.getElementById('pos').innerHTML = array[pos];
+            // count++;
+
+            // method 2
+            let ans = Math.floor(Math.random() * array.length);
+            document.getElementById('pos').innerHTML = array[ans];
+
+        }
+    </script>
+</body>
+</html>

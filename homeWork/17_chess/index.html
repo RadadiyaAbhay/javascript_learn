@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chess Game</title>
+    <style>
+        .board {
+            display: grid;
+            grid-template-columns: repeat(8, 50px);
+            grid-template-rows: repeat(8, 50px);
+            gap: 2px;
+        }
+
+        .square {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 24px;
+        }
+
+        .white {
+            background-color: #eee;
+        }
+
+        .black {
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="board" id="chessboard"></div>
+
+    <script>
+        // Chessboard representation (8x8 array)
+        let board = Array.from({ length: 8 }, () => Array(8).fill(null));
+
+        // Initialize the chessboard
+        function initBoard() {
+            const chessboard = document.getElementById("chessboard");
+
+            for (let row = 0; row < 8; row++) {
+                for (let col = 0; col < 8; col++) {
+                    const square = document.createElement("div");
+                    square.classList.add("square", (row + col) % 2 === 0 ? "white" : "black");
+                    square.dataset.row = row;
+                    square.dataset.col = col;
+                    square.textContent = getPieceSymbol(row, col);
+                    square.draggable = true;
+
+                    square.addEventListener("dragstart", handleDragStart);
+                    square.addEventListener("dragover", handleDragOver);
+                    square.addEventListener("drop", handleDrop);
+
+                    chessboard.appendChild(square);
+                }
+            }
+        }
+
+        // Get chess piece symbol based on row and column
+        function getPieceSymbol(row, col) {
+            // Replace this with your piece placement logic
+            const pieces = ["♜", "♞", "♝", "♛", "♚", "♝", "♞", "♜"];
+            return pieces[col];
+        }
+
+        // Handle drag and drop events
+        let dragPiece;
+
+        function handleDragStart(event) {
+            dragPiece = event.target;
+            event.dataTransfer.setData("text/plain", dragPiece.textContent);
+        }
+
+        function handleDragOver(event) {
+            event.preventDefault();
+        }
+
+        function handleDrop(event) {
+            event.preventDefault();
+            const target = event.target;
+            const fromRow = parseInt(dragPiece.dataset.row);
+            const fromCol = parseInt(dragPiece.dataset.col);
+            const toRow = parseInt(target.dataset.row);
+            const toCol = parseInt(target.dataset.col);
+
+            // Implement your move validation logic here
+            // You may want to check if the move is legal, e.g., within the rules of chess
+
+            // Update the board and UI
+            board[toRow][toCol] = board[fromRow][fromCol];
+            board[fromRow][fromCol] = null;
+            target.textContent = dragPiece.textContent;
+            dragPiece.textContent = "";
+
+            dragPiece = null;
+        }
+
+        // Initialize the chessboard
+        initBoard();
+    </script>
+</body>
+</html>

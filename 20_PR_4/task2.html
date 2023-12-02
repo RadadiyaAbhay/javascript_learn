@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Area</title>
+</head>
+<body>
+    <label> Enter Radius = </label>
+    <input type="text" id="in"/>
+    <input type="button" value="Submit" onclick="return val()" style="display: block; margin-top: 10px;"/>
+    <p id="out"></p>
+
+    <script>
+        function circle(r){
+            var ans;
+            ans =(22/7)*(r*r);
+            
+            return ans;
+        }
+
+        function val(){
+            var rInput;
+            rInput =parseInt(document.getElementById('in').value);
+            var area = circle(rInput);
+            // console.log(area);
+            document.getElementById('out').innerHTML=`<p>Circle Area =${area.toFixed(2)}</p>`;
+        }
+       
+
+    </script>
+</body>
+</html>

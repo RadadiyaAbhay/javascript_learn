@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+<body>
+    <script>
+        class school{
+            student(name,email,contact){
+                console.log(`Student Name = ${name} , Email = ${email} , Contact = ${contact}`);
+            }
+            faculty(name,email,contact){
+                console.log(`Faculty Name = ${name} , Email = ${email} , Contact = ${contact}`);
+            }
+            peon(name,email,contact){
+                console.log(`Peon Name = ${name} , Email = ${email} , Contact = ${contact}`);
+            }
+        }
+        
+        var stu1 =new school();
+        stu1.student('Abhay', 'abh@gmail.com', '67896 78658');
+
+        var fac1 =new school();
+        fac1.faculty('Mohan', 'moh@gmail.com', '89696 78678');
+        
+        var peon1 =new school();
+        peon1.peon('Sohan', 'soh@gmail.com', '35796 77858');
+    </script>
+</body>
+</html>

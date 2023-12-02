@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celsius to Fahrenheit</title>
+</head>
+<body>
+    <label> Enter celsius = </label>
+    <input type="text" id="in"/>
+    <input type="button" value="Submit" onclick="return val()" style="display: block; margin-top: 10px;"/>
+    <p id="out"></p>
+
+    <script>
+        function fahrenheit(c){
+            var f;
+            f = (c*1.8)+32;
+            
+            return f;
+        }
+
+        function val(){
+            var cInput;
+            fInput = parseInt(document.getElementById('in').value);
+            var fah = fahrenheit(fInput);
+            // console.log(fah);
+            document.getElementById('out').innerHTML=`<p>Fahrenheit =${fah.toFixed(2)}</p>`;
+        }
+       
+
+    </script>
+</body>
+</html>

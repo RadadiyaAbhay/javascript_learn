@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Information</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+        }
+        .main{
+            width: 100%;
+            
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .sub{
+            width: 19%;
+            border: 3px solid rgb(74, 74, 96);
+            border-radius: 20px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .sup{
+            width: 98%;
+            border: 3px solid rgb(74, 74, 96);
+            border-radius: 20px;
+            height: 490px;
+            background-image: url(./back.avif);
+            background-position: center;
+        }
+        .photo{
+            width: 100%;
+            
+            height: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content{
+            width: 100%;
+            padding-left: 20px;
+            height: 60%;
+        }
+        .my{
+            height: 150px;
+            width: 150px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center top;
+            border: 7px solid  rgb(74, 74, 96);
+            border-radius: 100%;
+            background-image: url(./1.jpg);
+            
+        }
+        .d-flex{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .fir{
+            padding-left: 10px;
+            border-left: 3px solid rgb(74, 74, 96);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <div class="sub">
+            <div class="sup">
+            <div class="photo">
+                
+                <div class="my"></div>
+            </div>
+            <div class="content ">
+                   <div class="d-flex fir">
+                    <p class="name" style="font-size: 30px; font-weight: 900;"></p>
+                    <p class="course"></p>
+                </div>
+                <div style="padding-top: 15px;">
+                    
+                    <label style="font-weight: 900;"> Phone No. : </label>
+                    <p class="call" style="padding-top: 1px;"></p>
+                    
+                    
+                </div>
+                <div style="padding-top: 15px;">
+                    <label style="font-weight: 900;"> Email : </label>
+                    <p class="email" style="padding-top: 1px;"></p>
+                </div>
+                <div style="padding-top: 15px;">
+                    <label  style="font-weight: 900;"> About : </label>
+                    <p class="about" style="padding-top: 1px;"></p>
+                </div>
+                    
+                    
+                
+                
+                   
+                    
+            </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    
+    
+    <script type="text/javascript">
+        var name = "Radadiya Abhay ";
+        var course = "Full Stack Developer ";
+        var about = "Talented fullstack developer skilled in front-end, back-end, and database integration.";
+        var call = 6355237855;
+        var email = "abhay592004@gmail.com";
+
+
+        document.querySelector(".name").innerHTML = name;
+        document.querySelector(".course").innerHTML = course;
+        document.querySelector(".about").innerHTML = about;
+        document.querySelector(".call").innerHTML = call;
+        document.querySelector(".email").innerHTML = email;
+
+    </script>
+</body>
+</html>

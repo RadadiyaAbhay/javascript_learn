@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="hi"></p>
+    <p class="an"></p>
+    <script>
+        var x = 5;
+        var y = 6;
+        var ans = x + y;
+
+        console.log("Ans = ", ans);
+        console.error("Ans = ", ans);
+        console.warn("Ans = ", ans);
+        console.info("Ans = ", ans);
+        document.write("Ans = ", ans);
+        window.alert("Ans = " + ans);
+
+        document.getElementById("hi").innerHTML = "Hi Everyone";
+        document.querySelector(".an").innerHTML = ans;
+    </script>
+</body>
+</html>

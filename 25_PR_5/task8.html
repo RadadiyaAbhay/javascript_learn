@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 8</title>
+</head>
+<body>
+    <p id="arr"></p>
+    <p id="ans"></p>
+    <p id="ans2"></p>
+    <script>
+        let words = ['Python', 'Javascript', 'Go', 'Java', 'PHP', 'Ruby'];
+        document.getElementById('arr').innerHTML =`Array = ${words}`;
+
+        var ans = words.filter((word) =>{
+                return 8 > word.length;
+        })
+        var ans2 = words.filter((word) =>{
+                return 8 <= word.length;
+        })
+
+        document.getElementById('ans').innerHTML =`Less than 8 characters String = ${ans}`;
+        document.getElementById('ans2').innerHTML =`More than 8 or Equal to 8 characters String = ${ans2}`;
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+<body>
+
+    <p id="ans1"></p>
+    <p id="ans2"></p>
+    <p id="ans3"></p>
+    <p id="ans4"></p>
+    <p id="ans5"></p>
+    <p id="ans6"></p>
+
+    <script>
+        let myColor = ["Red", "Green", "White", "Black"];
+
+        document.getElementById('ans1').innerHTML = myColor;
+        document.getElementById('ans2').innerHTML = myColor.join("+");
+        myColor.pop()
+        document.getElementById('ans3').innerHTML = myColor;
+        document.getElementById('ans4').innerHTML = myColor.shift();
+        document.getElementById('ans5').innerHTML = myColor;
+        myColor.push('Black','orange');
+        myColor.unshift('Red');
+        document.getElementById('ans6').innerHTML = myColor ;
+
+    </script>
+</body>
+</html>
